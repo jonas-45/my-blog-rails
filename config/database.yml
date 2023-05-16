@@ -12,6 +12,8 @@ default: &default
 development:
   <<: *default
   database: my_blog_development_db
+  username: jonas
+  password: <%= ENV["MY_BLOG-DATABASE_PASSWORD"] %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -23,3 +25,5 @@ test:
 production:
   <<: *default
   database: my_blog_production_db
+  username: jonas
+  password: <%= ENV["MY_BLOG-DATABASE_PASSWORD"] %>

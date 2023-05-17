@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # application config file for the project.
 require_relative 'boot'
 

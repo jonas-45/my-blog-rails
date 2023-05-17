@@ -134,7 +134,7 @@ To run tests, run the following command:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/ambrose-kibet/Catalog-of-my-things/issues).
+Feel free to check the [issues page](https://github.com/jonas-45/my-blog-rails/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -150,7 +150,7 @@ If you like this project please give it a thumps up and follow us for more updat
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-Thanks to @jonas-45, @Yemisirach and @ambrose-kibet for all the support and hardwork put into this project.
+Thanks to all the Microverse community for the continued support and encourgement.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -158,6 +158,6 @@ Thanks to @jonas-45, @Yemisirach and @ambrose-kibet for all the support and hard
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](./LICENSE.md) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

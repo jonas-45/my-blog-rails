@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 describe Post, type: :model do
-  let(:user) {User.create(name: 'Jake',photo: 'user.png', bio: 'Jake is a 21 year old footballer from Ghana')}
+  let(:user) { User.create(name: 'Jake', photo: 'user.png', bio: 'Jake is a 21 year old footballer from Ghana') }
   let(:post) { Post.create(author: user, title: 'My first post', text: 'Ghana is in West Africa') }
-  #subject {Post.new(author: user, title: 'My first post', text: 'Ghana is in West Africa')}
-  before {subject.save}
+  # subject {Post.new(author: user, title: 'My first post', text: 'Ghana is in West Africa')}
+  before { subject.save }
 
   describe 'Validations' do
     it 'title should be present' do
@@ -20,13 +20,15 @@ describe Post, type: :model do
     end
 
     it 'validates numericality of comments_counter' do
-      post3 = Post.new(author: user, title: 'My first post', text: 'Ghana is in West Africa', comments_counter: 'not_an_integer')
+      post3 = Post.new(author: user, title: 'My first post', text: 'Ghana is in West Africa',
+                       comments_counter: 'not_an_integer')
       expect(post3).not_to be_valid
       expect(post3.errors[:comments_counter]).to include('is not a number')
     end
 
     it 'validates numericality of likes_counter' do
-      post4 = Post.new(author: user, title: 'My first post', text: 'Ghana is in West Africa', likes_counter: 'not_an_integer')
+      post4 = Post.new(author: user, title: 'My first post', text: 'Ghana is in West Africa',
+                       likes_counter: 'not_an_integer')
       expect(post4).not_to be_valid
       expect(post4.errors[:likes_counter]).to include('is not a number')
     end
@@ -54,12 +56,12 @@ describe Post, type: :model do
 
   describe '#five_recent_comments' do
     it 'returns the five most recent comments in descending order' do
-      comment1 = Comment.create(author: user, post: post, text: 'Comment 1', created_at: 2.days.ago)
-      comment2 = Comment.create(author: user, post: post, text: 'Comment 2', created_at: 1.day.ago)
-      comment3 = Comment.create(author: user, post: post, text: 'Comment 3', created_at: 3.days.ago)
-      comment4 = Comment.create(author: user, post: post, text: 'Comment 4', created_at: 4.days.ago)
-      comment5 = Comment.create(author: user, post: post, text: 'Comment 5', created_at: 5.days.ago)
-      comment6 = Comment.create(author: user, post: post, text: 'Comment 6', created_at: 6.days.ago)
+      comment1 = Comment.create(author: user, post:, text: 'Comment 1', created_at: 2.days.ago)
+      comment2 = Comment.create(author: user, post:, text: 'Comment 2', created_at: 1.day.ago)
+      comment3 = Comment.create(author: user, post:, text: 'Comment 3', created_at: 3.days.ago)
+      comment4 = Comment.create(author: user, post:, text: 'Comment 4', created_at: 4.days.ago)
+      comment5 = Comment.create(author: user, post:, text: 'Comment 5', created_at: 5.days.ago)
+      Comment.create(author: user, post:, text: 'Comment 6', created_at: 6.days.ago)
 
       five_recent_comments = post.five_recent_comments
 
@@ -68,7 +70,7 @@ describe Post, type: :model do
 
     it 'limits the result to a maximum of five comments' do
       6.times do |index|
-        Comment.create(author: user, post: post, text: "Comment #{index + 1}")
+        Comment.create(author: user, post:, text: "Comment #{index + 1}")
       end
 
       five_recent_comments = post.five_recent_comments

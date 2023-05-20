@@ -23,7 +23,7 @@ describe Like, type: :model do
       it 'updates the likes_counter of the associated post' do
         expect(post.likes_counter).to eq(0)
 
-        like = Like.create(author: user, post: post)
+        Like.create(author: user, post:)
 
         expect(post.reload.likes_counter).to eq(1)
       end

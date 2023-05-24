@@ -75,6 +75,8 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem 'rspec-rails'
 end
 
 gem 'dotenv-rails', groups: %i[development test]
+gem 'rails-controller-testing'

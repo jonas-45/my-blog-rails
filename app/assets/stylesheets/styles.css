@@ -5,13 +5,13 @@ body {
   padding: 50px;
 }
 
-.userInfo {
+.user-info {
   display: flex;
   justify-content: center;
   gap: 30px;
 }
 
-.user_photo {
+.user-photo {
   width: 200px;
   height: 200px;
   border-radius: 10px;
@@ -24,7 +24,7 @@ body {
   object-fit: cover;
 }
 
-.badge {
+.user-details {
   display: flex;
   border: 2px solid #000;
   justify-content: space-around;
@@ -57,12 +57,30 @@ h3 {
   font-size: 20px;
 }
 
-.badge_nums {
+.total-posts {
   display: flex;
   margin-top: 50px;
   padding-top: 50px;
   gap: 10px;
   align-items: center;
+}
+
+#bio-and-posts {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.posts_container {
+  width: 80%;
+  margin: auto;
+}
+
+.user-bio {
+  width: 100%;
 }
 
 .bio,

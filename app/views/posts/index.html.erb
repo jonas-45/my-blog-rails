@@ -17,9 +17,7 @@
         <h4>Comments</h4>
         <% @post_comments.each do |comment| %>
           <ul>
-            <% if comment.post_id === post.id %>
-              <li><%= comment.author.name%>: <%= comment.text %></li>
-            <% end %>
+            <li><%= comment.author.name%>: <%= comment.text %></li>
           </ul>
         <% end %>
       </div>

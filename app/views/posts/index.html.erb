@@ -11,21 +11,32 @@
           Comments: <%= post.comments_counter %>,
           Likes: <%= post.likes_counter %>
         </p>
-        <%= link_to "view post", user_post_path(@user, post) %>
+
+        <div class="links">
+          <%= link_to "view post", user_post_path(@user, post) %>
+          <div class="add_like">
+            <%= link_to "Add comment", new_user_post_comment_path(user_id: @user, post_id: post)  %>|
+            <%= link_to "Add a like", new_user_post_like_path(user_id: @user, post_id: post.id) %>
+          </div>
+        </div>
       </div>
       <div class="post">
         <h4>Comments</h4>
         <% @post_comments.each do |comment| %>
           <ul>
-            <li><%= comment.author.name%>: <%= comment.text %></li>
+            <% if comment.post_id === post.id %>
+              <li><%= comment.author.name %>: <%= comment.text %></li>
+            <% end %>
           </ul>
         <% end %>
       </div>
       <br>
     <% end %>
     <br>
-    <button class="seePosts">
-      Next
-    </button>
+
+    <div class="new-post">
+      <%= link_to "Add new post", new_user_post_path(params[:user_id]) %>
+    </div>
+     
   </div>
 </section>

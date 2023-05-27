@@ -3,7 +3,6 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
     @user_posts = Post.where(author_id: @user.id)
     @post_comments = Comment.where(post_id: @user_posts.ids)
-    @posts = @user.posts
   end
 
   def show
@@ -23,7 +22,6 @@ class PostsController < ApplicationController
 
     if @post.save
       flash[:notice] = 'Post created successfully!'
-      # @post.update_post_counter
       redirect_to user_posts_path(current_user)
     else
       flash[:alert] = "Couln't create post!"

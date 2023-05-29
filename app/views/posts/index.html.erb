@@ -1,15 +1,5 @@
 <section id="user-details">
-  <div class="user-info">
-    <div class="user-photo"><%= image_tag @user.photo, class: "profile-image"%></div>
-    <div class="user-details">
-      <h1 class="user-name"><%= @user.name %></h1>
-      <div class="total-posts">
-        <h3 class="postCount">
-          Number of posts: <%= @user.posts_counter %>
-        </h3>
-      </div>
-    </div>
-  </div>
+  <%= render "shared/user", user: @user %>
   <br>
   <br>
   <div class="p-container posts_container">
@@ -21,14 +11,21 @@
           Comments: <%= post.comments_counter %>,
           Likes: <%= post.likes_counter %>
         </p>
-        <%= link_to "view post", user_post_path(@user, post) %>
+
+        <div class="links">
+          <%= link_to "view post", user_post_path(@user, post) %>
+          <div class="add_like">
+            <%= link_to "Add comment", new_user_post_comment_path(user_id: @user, post_id: post)  %>|
+            <%= link_to "Add a like", new_user_post_like_path(user_id: @user, post_id: post.id) %>
+          </div>
+        </div>
       </div>
       <div class="post">
         <h4>Comments</h4>
         <% @post_comments.each do |comment| %>
           <ul>
             <% if comment.post_id === post.id %>
-              <li><%= comment.author.name%>: <%= comment.text %></li>
+              <li><%= comment.author.name %>: <%= comment.text %></li>
             <% end %>
           </ul>
         <% end %>
@@ -36,8 +33,10 @@
       <br>
     <% end %>
     <br>
-    <button class="seePosts">
-      Next
-    </button>
+
+    <div class="new-post">
+      <%= link_to "Add new post", new_user_post_path(params[:user_id]) %>
+    </div>
+     
   </div>
 </section>

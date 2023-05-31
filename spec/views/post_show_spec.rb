@@ -8,8 +8,8 @@ RSpec.feature 'Post Show Page', type: :feature do
     post = Post.create(author: user, title: 'Post 1', text: 'Post 1 content')
 
     # Create comments for the post
-    comment1 = Comment.create(author: user, post: post, text: 'Comment 1')
-    comment2 = Comment.create(author: user, post: post, text: 'Comment 2')
+    comment1 = Comment.create(author: user, post:, text: 'Comment 1')
+    comment2 = Comment.create(author: user, post:, text: 'Comment 2')
 
     # Visit the post show page
     visit user_post_path(user, post)

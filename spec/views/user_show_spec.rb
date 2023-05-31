@@ -9,9 +9,9 @@ RSpec.feature 'User Show Page', type: :feature do
     # Visit the user show page
     visit user_path(user)
     # Assertions
-    expect(page).to have_css("img")
+    expect(page).to have_css('img')
     expect(page).to have_content(user.name)
-    expect(page).to have_content("Number of posts: 3")
+    expect(page).to have_content('Number of posts: 3')
     expect(page).to have_content(user.bio)
     expect(page).to have_content(post1.title)
     expect(page).to have_content(post2.title)

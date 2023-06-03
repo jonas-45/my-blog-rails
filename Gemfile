@@ -77,5 +77,6 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
 end
 
+gem 'devise'
 gem 'dotenv-rails', groups: %i[development test]
 gem 'rails-controller-testing'

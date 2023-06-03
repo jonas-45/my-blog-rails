@@ -57,6 +57,9 @@
 - Write SQL queries with Active Record to read and update
 - Add validations to all models
 - Add tests for all models
+- Add authorization rules
+- Add views and forms
+- Process data in models.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -126,9 +129,8 @@ To run tests, run the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Add authorization rules]**
-- [ ] **[Add views and forms]**
-- [ ] **[Process data in models.]**
+- [ ] **[Add styles to form and posts]**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

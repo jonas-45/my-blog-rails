@@ -78,5 +78,5 @@ group :test do
 end
 
 gem 'dotenv-rails', groups: %i[development test]
-gem 'devise
-gem 'rails-controller-testing''
+gem 'devise'
+gem 'rails-controller-testing'
